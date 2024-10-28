@@ -47,22 +47,20 @@ function restart(dataGame) {
 
 function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-
   if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
-    winner();
+    updateResult(dataGame, 'win');
   } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
-    winner();
+    updateResult(dataGame, 'win');
   } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
-    winner();
+    updateResult(dataGame, 'win');
   } else if (argPlayerMove == 'papier' && argComputerMove == 'papier') {
-    deadHeat();
+    updateResult(dataGame, 'draw');
   } else if (argPlayerMove == 'kamień' && argComputerMove == 'kamień') {
-    deadHeat();
+    updateResult(dataGame, 'draw');
   } else if (argPlayerMove == 'nożyce' && argComputerMove == 'nożyce') {
-    deadHeat();
+    updateResult(dataGame, 'draw');
   } else {
-    looser();
-  }
-  
+    updateResult(dataGame, 'lose');
+  }  
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
