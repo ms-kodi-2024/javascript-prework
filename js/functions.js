@@ -1,4 +1,6 @@
-function printMessage(msg){
+/* Messages */
+
+function printMessage(msg) {
 	let div = document.createElement('div');
 	div.innerText = msg;
 	document.getElementById('messages').appendChild(div);
@@ -8,18 +10,22 @@ function clearMessages(){
 	document.getElementById('messages').innerText = '';
 }
 
+/* Option choice */
+
 function getMoveName(argMoveId) {
   if(argMoveId == 1){
-    return 'kamień';
+    return movesNames.rock;
   } else if(argMoveId == 2) {
-    return 'papier';
+    return movesNames.paper;
   } else if(argMoveId == 3) {
-    return 'nożyce';
+    return movesNames.scissors;
   } else {
     printMessage(`Nie znam ruchu o id ${argMoveId}. Zakładam, że chodziło o "kamień".`);
-    return 'kamień';
+    return movesNames.rock;
   }
 }
+
+/* Change of object dataGame */
 
 function updateResult(dataGame, result) {
   if (result === 'win') {
@@ -45,25 +51,29 @@ function restart(dataGame) {
   }
 }
 
-function displayResult(argPlayerMove, argComputerMove) {
-  console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
-  if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+/* Display game result */
+
+function displayResult(argPlayerMove, { computerMove }) {
+  console.log(`wywołano funkcję displayResults z argumentami: ${argPlayerMove}, ${computerMove}`);
+  if (argPlayerMove == 'papier' && computerMove == 'kamień') {
     updateResult(dataGame, 'win');
-  } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+  } else if (argPlayerMove == 'kamień' && computerMove == 'nożyce') {
     updateResult(dataGame, 'win');
-  } else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+  } else if (argPlayerMove == 'nożyce' && computerMove == 'papier') {
     updateResult(dataGame, 'win');
-  } else if (argPlayerMove == 'papier' && argComputerMove == 'papier') {
+  } else if (argPlayerMove == 'papier' && computerMove == 'papier') {
     updateResult(dataGame, 'draw');
-  } else if (argPlayerMove == 'kamień' && argComputerMove == 'kamień') {
+  } else if (argPlayerMove == 'kamień' && computerMove == 'kamień') {
     updateResult(dataGame, 'draw');
-  } else if (argPlayerMove == 'nożyce' && argComputerMove == 'nożyce') {
+  } else if (argPlayerMove == 'nożyce' && computerMove == 'nożyce') {
     updateResult(dataGame, 'draw');
   } else {
     updateResult(dataGame, 'lose');
   }  
-  printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+  printMessage(`Zagrałem ${computerMove}, a Ty ${argPlayerMove}`);
 }
+
+/* Button related functions */
 
 function logsButtonClicked(argButtonName, dataGame) {
 	console.log(`${argButtonName} został kliknięty`);

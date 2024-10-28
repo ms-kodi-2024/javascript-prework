@@ -1,8 +1,12 @@
+/* Global */
+
 * {
     font-family: Galindo, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
 }
+
+/* Container */
 
 .container {
     margin: auto;
@@ -45,3 +49,9 @@
       margin-top: 50px;
     }
   }
+
+@media (max-width: 768px) {
+  a[class="button"] {
+    padding: 10px !important;
+  } 
+}
