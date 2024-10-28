@@ -4,4 +4,39 @@
   text-align: center;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdDQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FDQ0oiLCJmaWxlIjoic3R5bGUuY3NzIn0= */
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.container #buttons {
+  margin-top: 20px;
+}
+.container a[class=button] {
+  display: inline-block;
+  padding: 30px;
+  border-radius: 10px;
+  border: #000 3px solid;
+  background-color: #fffc00;
+  font-weight: 700;
+}
+.container .non-display {
+  display: none;
+}
+.container .non-display:not(:last-of-type) {
+  margin-top: 50px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  padding: 20px;
+}
+.container .display {
+  display: inline-block;
+}
+.container #restartGame {
+  margin-top: 50px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3Mvc3R5bGUuc2NzcyIsInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGdDQUFBO0VBQ0EsZUFBQTtFQUNBLGtCQUFBO0FDQ0o7O0FERUE7RUFDSSxZQUFBO0VBQ0EsYUFBQTtFQUNBLHNCQUFBO0VBQ0EsbUJBQUE7RUFDQSxrQkFBQTtBQ0NKO0FEQ0k7RUFDRSxnQkFBQTtBQ0NOO0FERUk7RUFDRSxxQkFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHNCQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQ0FOO0FER0k7RUFVRSxhQUFBO0FDVk47QURFTTtFQUNFLGdCQUFBO0VBQ0Esc0JBQUE7RUFDQSxtQkFBQTtFQUNBLHlCQUFBO0VBQ0EsYUFBQTtBQ0FSO0FETUk7RUFDRSxxQkFBQTtBQ0pOO0FET0k7RUFDRSxnQkFBQTtBQ0xOIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */

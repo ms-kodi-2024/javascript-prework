@@ -3,3 +3,45 @@
     font-size: 30px;
     text-align: center;
 }
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+    #buttons {
+      margin-top: 20px;
+    }
+  
+    a[class="button"] {
+      display: inline-block;
+      padding: 30px;
+      border-radius: 10px;
+      border: #000 3px solid;
+      background-color: #fffc00;
+      font-weight: 700;
+    } 
+  
+    .non-display {
+  
+      &:not(:last-of-type) {
+        margin-top: 50px;
+        border: 2px solid #000;
+        border-radius: 10px;
+        background-color: #e0e0e0;
+        padding: 20px;
+      }
+  
+      display: none;
+    }
+  
+    .display {
+      display: inline-block;
+    }
+  
+    #restartGame {
+      margin-top: 50px;
+    }
+  }
