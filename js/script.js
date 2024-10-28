@@ -1,11 +1,34 @@
-const playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-const playerMove = getMoveName(playerInput);
-const randomNumber = Math.floor(Math.random() * 3 + 1);
-const computerMove = getMoveName(randomNumber);
+const dataGame = {
+	round: 0,
+	pointsGamer: 0,
+  pointsComputer: 0,
+  computerMove: 0,
+  randomNumber: 0,
+  getRandomNumber: () => Math.floor(Math.random() * 3 + 1)
+} 
+  
+const handlesButtons = {
+  rock: document.getElementById('rock'),
+  paper: document.getElementById('paper'),
+  scissors: document.getElementById('scissors')
+}
 
-printMessage('Mój ruch to: ' + computerMove);
-printMessage('Twój ruch to: ' + playerMove);
-displayResult(playerMove, computerMove);
+const handlesDisplay = {
+  messages: document.getElementById('messages'),
+  result: document.getElementById('result'), 
+  restart: document.getElementById('restart')
+}
 
-console.log('Wylosowana liczba to: ' + randomNumber);
-console.log('Gracz wpisał: ' + playerInput);
+const movesNames = {
+  rock: "kamień",
+  paper: "papier",
+  scissors: "nożyce"
+}
+
+for (let key in movesNames) {
+  handlesButtons[key].addEventListener('click', function() {
+    buttonClicked(movesNames[key], dataGame);
+  });
+}
+
+document.getElementById('restartGame').addEventListener('click', function(){ restart(dataGame) });

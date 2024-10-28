@@ -64,3 +64,23 @@ function displayResult(argPlayerMove, argComputerMove) {
   }  
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
+
+function logsButtonClicked(argButtonName, dataGame) {
+	console.log(`${argButtonName} został kliknięty`);
+	console.log(`wylosowana liczba to: ${dataGame.randomNumber}`);
+	console.log(`ruch komputera to: ${dataGame.computerMove}`);
+}
+
+function buttonClicked(playerMove, dataGame) {
+	clearMessages();
+		for (let key in handlesDisplay) {
+    handlesDisplay[key].classList.add('display');
+  }
+	dataGame.round++;
+  dataGame.randomNumber = dataGame.getRandomNumber();
+	dataGame.computerMove = getMoveName(dataGame.randomNumber);
+  logsButtonClicked(playerMove, dataGame);
+	displayResult(playerMove, dataGame);
+	handlesDisplay.result.innerText = `Runda: ${dataGame.round}:
+	Punkty gracza: ${dataGame.pointsGamer} - Punkty komputera: ${dataGame.pointsComputer}`;
+}  
