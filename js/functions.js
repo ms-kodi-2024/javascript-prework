@@ -35,6 +35,7 @@ function deadHeat() {
 
 function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
+
   if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
     winner();
   } else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
@@ -50,5 +51,6 @@ function displayResult(argPlayerMove, argComputerMove) {
   } else {
     looser();
   }
+  
   printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 }
