@@ -36,6 +36,15 @@ function updateResult(dataGame, result) {
   }
 }
 
+function restart(dataGame) {
+	dataGame.round = 0;
+	dataGame.pointsGamer = 0;
+  dataGame.pointsComputer = 0;
+  for (let key in handlesDisplay) {
+    handlesDisplay[key].classList.remove('display');
+  }
+}
+
 function displayResult(argPlayerMove, argComputerMove) {
   console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
 
