@@ -21,16 +21,19 @@ function getMoveName(argMoveId) {
   }
 }
 
-function winner() {
-  printMessage('Wygrywasz!');
-}
-
-function looser() {
-  printMessage('Przegrywasz :(');
-}
-
-function deadHeat() {
-  printMessage('Remis');
+function updateResult(dataGame, result) {
+  if (result === 'win') {
+    printMessage(`Wygrywasz!`);
+    dataGame.pointsGamer++;
+    handlesDisplay.messages.style.backgroundColor = '#00ee00';
+  } else if (result === 'lose') {
+    printMessage(`Przegrywasz :(`);
+    dataGame.pointsComputer++;
+    handlesDisplay.messages.style.backgroundColor = '#ee0000';
+  } else if (result === 'draw') {
+    printMessage(`Remis`);
+    handlesDisplay.messages.style.backgroundColor = '#e0e0e0';
+  }
 }
 
 function displayResult(argPlayerMove, argComputerMove) {
